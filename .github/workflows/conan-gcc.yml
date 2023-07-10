@@ -1,0 +1,56 @@
+---
+name: Linux GCC
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */2 * * *'  # 17 min past every two hours.
+
+env:
+  CONAN_UPLOAD: ${{ secrets.CONAN_URL }}
+  CONAN_PASSWORD_SINTEF: ${{ secrets.CONAN_PASSWORD }}
+  CONAN_LOGIN_USERNAME_SINTEF: ${{ secrets.CONAN_USER }}
+  CONFIG_URL: https://github.com/sintef-ocean/conan-configs.git
+
+jobs:
+  conan-with-gcc:
+    name: Conan
+    runs-on: ubuntu-22.04
+    env:
+      cppstd: "${{ matrix.compiler_version < 11 && 'gnu14' || 'gnu17' }}"
+    strategy:
+      fail-fast: false
+      matrix:
+        conan: ["2.0"]
+        build_type: [Debug, Release]
+        chain: ["chain3"]
+        profile: [gcc]
+        compiler_version: [10, 12]
+    container:
+      image: conanio/gcc${{ matrix.compiler_version }}-ubuntu18.04
+      options: -u 0
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install prerequisites
+        run: |
+          sudo apt-get update
+          pip3 install --upgrade pip
+          pip3 install --upgrade conan~=${{ matrix.conan }}
+      - name: Configure Conan
+        run: conan remote add sintef ${{ env.CONAN_UPLOAD }}
+      - name: Conan install and build missing
+        run: |
+          git config --global --add safe.directory '*'
+          conan config install ${{ env.CONFIG_URL }}  --type git -sf conan${{ matrix.conan }}
+          conan config install ${{ env.CONFIG_URL }}  --type git -sf profiles -tf profiles
+          conan install -s build_type=${{ matrix.build_type }} \
+            -s compiler.version=${{ matrix.compiler_version }} \
+            -s compiler.cppstd=${{ env.cppstd }} \
+            -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} \
+            -b missing -b outdated -u --format=json ${{ matrix.chain }} > install.json
+
+      - name: Conan upload
+        run: |
+          conan list --graph=install.json --graph-binaries=build --format=json > pkglist.json
+          conan upload --confirm -r sintef --force -l pkglist.json
