@@ -24,7 +24,7 @@ jobs:
       matrix:
         conan: ["2.0"]
         build_type: [Debug, Release]
-        chain: ["chain3"]
+        chain: ["chain1", "chain2"]
         profile: [gcc]
         compiler_version: [10, 12]
     container:
