@@ -53,4 +53,4 @@ jobs:
       - name: Conan upload
         run: |
           conan list --graph=install.json --graph-binaries=build --format=json > pkglist.json
-          conan upload --confirm -r sintef --force -l pkglist.json
+          conan upload --confirm -r sintef --force -l pkglist.json || true

@@ -42,6 +42,7 @@ jobs:
             -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} `
             -b missing -b outdated -u --format=json ${{ matrix.chain }} > install.json
       - name: Conan upload
+        shell: pwsh
         run: |
           conan list --graph=install.json --graph-binaries=build --format=json > pkglist.json
-          conan upload --confirm -r sintef --force -l pkglist.json
+          conan upload --confirm -r sintef --force -l pkglist.json || true
