@@ -1,0 +1,8 @@
+# ogre with default settings
+[requires]
+ogre3d/13.6.4@sintef/testing
+
+[options]
+
+[layout]
+cmake_layout
