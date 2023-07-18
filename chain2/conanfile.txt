@@ -5,7 +5,7 @@ ois/1.5.1
 doxygen/1.9.4
 tinyxml/2.6.2
 
-[options[
+[options]
 ogre3d/*:with_sdl = False
 ogre3d/*:plugin_glslang = False
 ogre3d/*:component_bullet = False
