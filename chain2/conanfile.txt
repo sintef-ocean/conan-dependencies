@@ -7,6 +7,8 @@ tinyxml/2.6.2
 protobuf/3.19.6
 fmt/10.0.0
 gtest/1.13.0
+stduuid/1.2.3
+taywee-args/6.4.6
 
 [options]
 ogre3d/*:with_sdl = False
