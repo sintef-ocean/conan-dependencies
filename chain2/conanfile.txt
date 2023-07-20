@@ -6,6 +6,7 @@ doxygen/1.9.4
 tinyxml/2.6.2
 protobuf/3.19.6
 fmt/10.0.0
+gtest/1.13.0
 
 [options]
 ogre3d/*:with_sdl = False
