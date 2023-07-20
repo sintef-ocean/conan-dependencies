@@ -4,6 +4,8 @@ ogre3d/13.6.4@sintef/testing
 ois/1.5.1
 doxygen/1.9.4
 tinyxml/2.6.2
+protobuf/3.19.6
+fmt/10.0.0
 
 [options]
 ogre3d/*:with_sdl = False
