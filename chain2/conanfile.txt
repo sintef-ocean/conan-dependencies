@@ -1,6 +1,6 @@
 # FhSim dependencies
 [requires]
-ogre3d/13.6.4@sintef/testing
+ogre3d/13.6.5@sintef/testing
 ois/1.5.1
 tinyxml/2.6.2
 protobuf/3.19.6
