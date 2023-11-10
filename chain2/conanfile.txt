@@ -13,6 +13,7 @@ taywee-args/6.4.6
 doxygen/1.9.4
 
 [options]
+doxygen/*:enable_app = True
 ogre3d/*:with_sdl = False
 ogre3d/*:plugin_glslang = False
 ogre3d/*:component_bullet = False
