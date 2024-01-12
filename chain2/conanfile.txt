@@ -16,3 +16,4 @@ doxygen/1.9.4
 ogre3d/*:with_sdl = False
 ogre3d/*:plugin_glslang = False
 ogre3d/*:component_bullet = False
+ogre3d/*:with_freetype = True
