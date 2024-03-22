@@ -1,0 +1,6 @@
+* What is this?
+
+  This is a repo that builds Conan dependencies for our software. It builds various binary
+  configurations, which are missing from Conan center or our hosted Artifactory. The
+  builds are scheduled to run regularly to ensure that binary artifacts of these
+  dependencies become available shortly after changes to their recipes or versions.
