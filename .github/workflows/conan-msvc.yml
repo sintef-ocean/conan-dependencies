@@ -22,7 +22,7 @@ jobs:
       matrix:
         conan: ["2.0"]
         build_type: [Debug, Release]
-        chain: ["chain1", "chain2", "chain4"]
+        chain: ["chain1", "chain2", "chain3", "chain4"]
         profile: [msvc17]
         compiler_version: [192, 193]
     steps:
