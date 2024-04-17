@@ -25,6 +25,9 @@ jobs:
         chain: ["chain1", "chain2", "chain3", "chain4"]
         profile: [msvc17]
         compiler_version: [192, 193]
+        exclude:
+          - chain: chain3
+            compiler_version: 193
     steps:
       - uses: actions/checkout@v4
       - name: Install prerequisites
