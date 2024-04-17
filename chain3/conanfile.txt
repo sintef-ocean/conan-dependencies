@@ -1,0 +1,15 @@
+# function-fmu
+[requires]
+muparserx/4.0.12
+stduuid/1.2.3
+rapidxml/1.13
+inja/3.4.0
+
+kuba-zip/0.3.2
+taywee-args/6.4.6
+replxx/0.0.4
+
+[options]
+
+[layout]
+cmake_layout
