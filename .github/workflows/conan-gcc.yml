@@ -45,7 +45,7 @@ jobs:
           conan install -s build_type=${{ matrix.build_type }} -s:b build_type=${{ matrix.build_type }} \
             -s compiler.version=${{ matrix.compiler_version }} -s:b compiler.version=${{ matrix.compiler_version }} \
             -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} \
-            -b missing:* -b outdated \
+            -b missing:* -b outdated -b "b2/*" \
             -u --format=json ${{ matrix.chain }} > install.json
 
       - name: Conan upload
