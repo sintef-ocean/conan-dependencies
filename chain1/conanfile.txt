@@ -9,6 +9,7 @@ hdf5/1.8.21
 
 [options]
 */*:shared = True
+tinyxml/*:shared = False
 tinyxml/*:with_stl = True
 hdf5/*:threadsafe = True
 hdf5/*:enable_unsupported = True
