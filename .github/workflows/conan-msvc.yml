@@ -42,7 +42,7 @@ jobs:
           conan config install ${{ env.CONFIG_URL }}  --type git -sf profiles -tf profiles
           conan install -s build_type=${{ matrix.build_type }} -s:b build_type=${{ matrix.build_type }} `
             -s compiler.version=${{ matrix.compiler_version }} -s:b compiler.version=${{ matrix.compiler_version }} `
-            -o tinyxml/*:shared = False `
+            -o tinyxml/*:shared=False `
             -s:h xapian-core/*:compiler.cppstd=14 `
             -s:b xapian-core/*:compiler.cppstd=14 `
             -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} `
