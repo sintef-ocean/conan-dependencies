@@ -8,7 +8,7 @@ tinyxml/2.6.2
 hdf5/1.8.21
 
 [options]
-libmodbus/*:shared = True
+*/*:shared = True
 tinyxml/*:with_stl = True
 hdf5/*:threadsafe = True
 hdf5/*:enable_unsupported = True
