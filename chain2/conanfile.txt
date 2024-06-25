@@ -9,6 +9,7 @@ fmt/10.0.0
 gtest/1.13.0
 stduuid/1.2.3
 taywee-args/6.4.6
+boost/1.81.0
 
 [tool_requires]
 doxygen/1.9.4
