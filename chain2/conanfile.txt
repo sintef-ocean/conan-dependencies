@@ -12,7 +12,7 @@ taywee-args/6.4.6
 boost/1.81.0
 
 [tool_requires]
-doxygen/1.9.4
+doxygen/1.12.0
 
 [options]
 ogre3d/*:with_sdl = False
