@@ -1,6 +1,6 @@
 # ogre with default settings
 [requires]
-ogre3d/14.1.1@sintef/stable
+ogre3d/14.3.4@sintef/stable
 
 [options]
 
