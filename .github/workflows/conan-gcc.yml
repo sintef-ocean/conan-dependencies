@@ -35,8 +35,10 @@ jobs:
             linux: debian:bookworm
             compiler_version: 12
         exclude:
-          - compiler_version: 14
-          - chain: chain1
+          - linux: debian:trixie
+            compiler_version: 14
+            chain: chain1
+
 
     container:
       image: ${{ matrix.linux }}
