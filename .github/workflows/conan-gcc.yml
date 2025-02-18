@@ -35,8 +35,7 @@ jobs:
             linux: debian:bookworm
             compiler_version: 12
         exclude:
-          - linux: debian:trixie
-            compiler_version: 14
+          - compiler_version: 14
             chain: chain1
 
 
