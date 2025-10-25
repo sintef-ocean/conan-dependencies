@@ -1,18 +1,18 @@
 # FhSim dependencies
 [requires]
 sundials/5.4.0
-ogre3d/14.3.4@sintef/stable
+ogre3d/14.4.1@sintef/stable
 ois/1.5.1
 tinyxml/2.6.2
 protobuf/3.19.6
 fmt/10.0.0
-gtest/1.13.0
+gtest/1.17.0
 stduuid/1.2.3
 taywee-args/6.4.6
 boost/1.81.0
 
 [tool_requires]
-doxygen/1.12.0
+doxygen/1.14.0
 
 [options]
 ogre3d/*:with_sdl = False
