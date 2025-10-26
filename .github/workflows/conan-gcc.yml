@@ -61,6 +61,10 @@ jobs:
           conan install -s build_type=${{ matrix.build_type }} -s:b build_type=${{ matrix.build_type }} \
             -s compiler.version=${{ matrix.compiler_version }} -s:b compiler.version=${{ matrix.compiler_version }} \
             -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} \
+            -s:h hdf5/*:compiler.version=12 `
+            -s:b hdf5/*:compiler.version=12 `
+            -s:h netcdf/*:compiler.version=12 `
+            -s:b netcdf/*:compiler.version=12 `
             -b missing:* -b outdated \
             -u --format=json ${{ matrix.chain }} > install.json
       - name: Conan upload
