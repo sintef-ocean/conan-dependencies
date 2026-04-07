@@ -5,7 +5,7 @@ libmodbus/3.1.6
 yaml-cpp/0.7.0
 muparser/2.3.5
 tinyxml/2.6.2
-hdf5/1.8.21
+hdf5/1.14.3
 
 [options]
 */*:shared = True
