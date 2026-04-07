@@ -42,7 +42,7 @@ jobs:
       image: ${{ matrix.linux }}
       options: -u 0
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install prerequisites
         run: |
           apt-get update
@@ -69,4 +69,4 @@ jobs:
       - name: Conan upload
         run: |
           conan list --graph=install.json --graph-binaries=build --format=json > pkglist.json
-          conan upload --confirm -r sintef --force -l pkglist.json || true
+          conan upload --confirm -r sintef -l pkglist.json || true

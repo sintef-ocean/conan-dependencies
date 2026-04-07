@@ -28,7 +28,7 @@ jobs:
           - chain: chain3
             compiler_version: 194
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Install prerequisites
         run: |
           pip3 install --upgrade pip
@@ -52,4 +52,4 @@ jobs:
         shell: pwsh
         run: |
           conan list --graph=install.json --graph-binaries=build --format=json > pkglist.json
-          conan upload --confirm -r sintef --force -l pkglist.json || true
+          conan upload --confirm -r sintef -l pkglist.json || true
