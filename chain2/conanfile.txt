@@ -1,7 +1,7 @@
 # FhSim dependencies
 [requires]
 sundials/5.4.0
-ogre3d/14.4.1@sintef/stable
+ogre3d/14.4.1@sintef/testing
 ois/1.5.1
 tinyxml/2.6.2
 protobuf/3.19.6

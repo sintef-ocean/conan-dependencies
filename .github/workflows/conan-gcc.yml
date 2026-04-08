@@ -54,8 +54,8 @@ jobs:
           conan config install ${{ env.CONFIG_URL }}  --type git -sf profiles -tf profiles
       - name: Conan install and build missing
         run: |
-          conan install -s build_type=${{ matrix.build_type }} -s:b build_type=${{ matrix.build_type }} \
-            -s compiler.version=${{ matrix.compiler_version }} -s:b compiler.version=${{ matrix.compiler_version }} \
+          conan install -s:h build_type=${{ matrix.build_type }} -s:b build_type=${{ matrix.build_type }} \
+            -s:h compiler.version=${{ matrix.compiler_version }} -s:b compiler.version=${{ matrix.compiler_version }} \
             -pr:b=${{ matrix.profile }} -pr:h=${{ matrix.profile }} \
             -b missing:* -b outdated \
             -u --format=json ${{ matrix.chain }} > install.json

@@ -1,6 +1,6 @@
 # ogre with default settings
 [requires]
-ogre3d/14.4.1@sintef/stable
+ogre3d/14.5.2@sintef/testing
 
 [options]
 
